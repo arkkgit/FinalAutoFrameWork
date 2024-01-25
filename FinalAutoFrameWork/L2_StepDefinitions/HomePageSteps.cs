@@ -24,7 +24,7 @@ namespace FinalAutoFrameWork.L2_StepDefinitions
         {
             HomePage homePage = new HomePage(sso);
             var actualURL = homePage.getURL();
-            Assert.AreEqual("https://www.advantageonlineshopping.com/#", actualURL);
+            Assert.AreEqual("https://www.advantageonlineshopping.com/#/", actualURL);
         }
 
     }

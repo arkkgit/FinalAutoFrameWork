@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 
 namespace FinalAutoFrameWork.L2_StepDefinitions.Hooks
 {
-   // [Binding]
+    [Binding]
     public class BrowserHooks
     {
         ShareStateObjects sso;
@@ -24,6 +24,9 @@ namespace FinalAutoFrameWork.L2_StepDefinitions.Hooks
         public void SetUpBrowser()
         {
             sso.driver = new ChromeDriver();
+            sso.driver.Manage().Window.Maximize();
+            sso.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            sso.driver.Url = "https://www.advantageonlineshopping.com/";
         }
 
         
@@ -32,7 +35,7 @@ namespace FinalAutoFrameWork.L2_StepDefinitions.Hooks
         [AfterScenario]
         public void TearDownBrowser()
         {
-            sso.driver.Quit();
+            //sso.driver.Quit();
         }
 
     }

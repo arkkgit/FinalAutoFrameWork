@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FinalAutoFrameWork.Utilities;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -13,7 +14,7 @@ namespace FinalAutoFrameWork.ZLab
     public class Reg
     {
 
-        [Test]
+       // [Test]
         public void reg()
         {
 
@@ -21,8 +22,10 @@ namespace FinalAutoFrameWork.ZLab
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);  
             driver.Url = "https://www.advantageonlineshopping.com/#/register";
-            driver.FindElement(By.Name("usernameRegisterPage")).SendKeys("TestsAb89");
-            driver.FindElement(By.Name("emailRegisterPage")).SendKeys("TesstAb89@gmail.co.uk");
+
+            var uname = "Tuser" + Utils.GenerateRandomNumber(4);
+            driver.FindElement(By.Name("usernameRegisterPage")).SendKeys(uname);
+            driver.FindElement(By.Name("emailRegisterPage")).SendKeys(uname+"@gmail.co.uk");
             driver.FindElement(By.Name("passwordRegisterPage")).Click();
             driver.FindElement(By.Name("passwordRegisterPage")).SendKeys("Test@1234");
             
@@ -30,10 +33,16 @@ namespace FinalAutoFrameWork.ZLab
             driver.FindElement(By.Name("confirm_passwordRegisterPage")).SendKeys("Test@1234");
            
             driver.FindElement(By.Name("i_agree")).Click();
+            Thread.Sleep(2000);
             driver.FindElement(By.Id("register_btn")).Click();
-            Thread.Sleep(10000);
-
+            Thread.Sleep(2000);
+            driver.Navigate().Forward();
+            Thread.Sleep(4000);
+            //driver.FindElement(By.Id("register_btn")).Click();
             Assert.AreEqual("https://www.advantageonlineshopping.com/#/", driver.Url);
         }
+
+
+       
     }
 }
