@@ -1,4 +1,5 @@
 ﻿using FinalAutoFrameWork.Global;
+using FinalAutoFrameWork.L2_StepDefinitions.Hooks;
 using FinalAutoFrameWork.L3_Pages;
 using NUnit.Framework;
 using System;
@@ -24,7 +25,7 @@ namespace FinalAutoFrameWork.L2_StepDefinitions
         {
             HomePage homePage = new HomePage(sso);
             var actualURL = homePage.getURL();
-            Assert.AreEqual("https://www.advantageonlineshopping.com/#/", actualURL);
+            Assert.AreEqual(EnvHooks.EnvData["app.url"] + "#/", actualURL);
         }
 
     }

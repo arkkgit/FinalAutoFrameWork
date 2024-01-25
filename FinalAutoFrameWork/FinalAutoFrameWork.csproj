@@ -90,6 +90,7 @@
     <Compile Include="L2_StepDefinitions\HomePageSteps.cs" />
     <Compile Include="L2_StepDefinitions\Hooks\BrowserHooks.cs" />
     <Compile Include="L2_StepDefinitions\Hooks\DataHooks.cs" />
+    <Compile Include="L2_StepDefinitions\Hooks\EnvHooks.cs" />
     <Compile Include="L2_StepDefinitions\RegisterPageSteps.cs" />
     <Compile Include="L3_Pages\BasePage.cs" />
     <Compile Include="L3_Pages\CommonPage.cs" />
@@ -105,6 +106,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\RegData.txt" />
+    <Content Include="Environment\SysTest.txt" />
+    <Content Include="Environment\UAT.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.WebDriver.4.17.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.17.0\build\Selenium.WebDriver.targets')" />

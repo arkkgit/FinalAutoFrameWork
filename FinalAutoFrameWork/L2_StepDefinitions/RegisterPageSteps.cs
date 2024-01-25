@@ -1,4 +1,5 @@
 ﻿using FinalAutoFrameWork.Global;
+using FinalAutoFrameWork.L2_StepDefinitions.Hooks;
 using FinalAutoFrameWork.L3_Pages;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace FinalAutoFrameWork.L2_StepDefinitions
         [Given(@"the user is on the registration page")]
         public void GivenTheUserIsOnTheRegistrationPage()
         {
-            new CommonPage(sso).NavigatetoPage("https://www.advantageonlineshopping.com/#/register");
+            new CommonPage(sso).NavigatetoPage(EnvHooks.EnvData["app.url"]+"#/register");
         }
 
 

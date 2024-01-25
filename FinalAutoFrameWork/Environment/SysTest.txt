@@ -1,0 +1,3 @@
+﻿app.url = https://www.advantageonlineshopping.com/
+app.username = existingsysuser
+app.password = syspassword
