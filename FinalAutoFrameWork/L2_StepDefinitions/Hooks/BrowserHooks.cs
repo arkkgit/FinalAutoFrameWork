@@ -14,6 +14,10 @@ using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 
+//move as required
+[assembly: Parallelizable(ParallelScope.Fixtures)]
+[assembly: LevelOfParallelism(4)]
+
 namespace FinalAutoFrameWork.L2_StepDefinitions.Hooks
 {
     [Binding]
@@ -33,15 +37,14 @@ namespace FinalAutoFrameWork.L2_StepDefinitions.Hooks
             string runOnGrid = TestContext.Parameters["grid"] ?? "no";
             string browsername = TestContext.Parameters["browser"] ?? "chrome";
 
-            if (TestContext.Parameters["grid"] == "no")
+            if (runOnGrid == "yes")
             {
-                
-                setBrowser(browsername);
+                setBrowserGrid();
               
             }
             else
             {
-                setBrowserGrid();
+                setBrowser(browsername);
             }
             
             sso.driver.Manage().Window.Maximize();
@@ -55,7 +58,7 @@ namespace FinalAutoFrameWork.L2_StepDefinitions.Hooks
         [AfterScenario]
         public void TearDownBrowser()
         {
-            //sso.driver.Quit();
+            sso.driver.Quit();
         }
 
 

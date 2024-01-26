@@ -57,14 +57,14 @@ namespace FinalAutoFrameWork.L3_Pages
         public void AgreeTerms()
         {
             Click(agree);
-            Thread.Sleep(2000);
+            DriverUtils.waiitUntilTheSpinningWheelDisappers(sso.driver);
         }
 
         public void ClickSubmit()
         {
             Click(regButton);
-            Thread.Sleep(3000);
-            
+            DriverUtils.waiitUntilTheSpinningWheelDisappers(sso.driver);
+
         }
 
 

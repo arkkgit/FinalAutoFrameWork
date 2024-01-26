@@ -10,6 +10,9 @@
 *.userosscache
 *.sln.docstates
 
+#Ignoring extent Reports
+Reports/*
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
