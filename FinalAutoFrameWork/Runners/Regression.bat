@@ -1,1 +1,1 @@
-﻿nunit3-console ..\FinalAutoFrameWork.csproj --where "cat=registration" -tp "env=systest" -tp "browser=chrome"
+nunit3-console ..\FinalAutoFrameWork.csproj --where "cat=registration" -tp "env=systest" -tp "browser=chrome
